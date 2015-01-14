@@ -4,17 +4,17 @@
 
 # Install, not upgrade
 install
+cdrom
 
 # Install from a friendly mirror and add updates
-url --url http://mirror.rackspace.com/CentOS/7.0.1406/os/x86_64/
-repo --name=centos-updates --mirrorlist=http://mirrorlist.centos.org/?release=7.0.1406&arch=x86_64&repo=updates
+#url --url http://mirror.rackspace.com/CentOS/7.0.1406/os/x86_64/
+#repo --name=centos-updates --mirrorlist=http://mirrorlist.centos.org/?release=7.0.1406&arch=x86_64&repo=updates
 
 # Language and keyboard setup
 lang en_US.UTF-8
 keyboard us
 
 # Configure networking without IPv6, firewall off
-
 # for STATIC IP: uncomment and configure
 # network --onboot=yes --device=eth0 --bootproto=static --ip=192.168.###.### --netmask=255.255.255.0 --gateway=192.168.###.### --nameserver=###.###.###.### --noipv6 --hostname=$$$
 
@@ -24,7 +24,7 @@ network --bootproto=dhcp --device=eth0 --onboot=on
 firewall --enabled --ssh
 
 # Set timezone
-timezone --utc Etc/UTC
+timezone Asis/Shanghai
 
 # Authentication
 rootpw --lock
